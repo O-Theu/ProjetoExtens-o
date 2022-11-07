@@ -1,0 +1,16 @@
+.formulario {
+    display: block;
+    background-color: #FFF;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin: 20vh auto;
+    width: 400px;
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 15%);
+}
+
+.formulario__titulo {
+    color: #000;
+    font-size: 40px;
+    margin: 1em .5em;
+}

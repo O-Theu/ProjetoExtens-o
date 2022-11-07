@@ -1,0 +1,10 @@
+.container__formulario {
+    text-align: center;
+    padding: 2em;
+    margin: 2em auto;
+    background-color: #FFF;
+    max-width: 700px;
+    border-top: 2px solid rgb(18, 173, 212);
+    border-radius: 18px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}

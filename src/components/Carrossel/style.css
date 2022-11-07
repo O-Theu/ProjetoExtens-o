@@ -1,0 +1,17 @@
+.container__carrosel {
+    position: absolute;
+    top: 30vh;
+    right: 20px;
+    width: 70%;
+}
+
+.carrosel {
+    cursor: grab;
+    overflow: hidden;
+    padding: 2em;
+}
+
+.inner {
+    display: flex;
+}
+
