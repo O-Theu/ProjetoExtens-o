@@ -1,12 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 
 import { NavBar } from '../components/NavBar';
 import { Carrossel } from '../components/Carrossel';
 import { ProjetosContext, ProjetosProvider } from '../context/ProjetosContext';
 
-const ProjetosNovos = () => {
+const ProjetosConcluidos = () => {
 
-  var { dataFormatada } = useContext(ProjetosContext)
+  const { dataFormatada } = useContext(ProjetosContext);
 
   var projetos = [];
 
@@ -15,15 +15,16 @@ const ProjetosNovos = () => {
   projetos = JSON.parse(localStorage.getItem("projetos"))
 
   projetos.map((projeto) => {
-    if(projeto.dataInicial > dataFormatada) {
+    if(projeto.dataFinal < dataFormatada ) {
       projetosFiltrado.push(projeto);
     }
   })
+ 
 
   return (
     <>
         <NavBar />
-        <h2>Projetos novos</h2>
+        <h2>Projetos concluídos</h2>
 
         <Carrossel
           projetos={projetosFiltrado}
@@ -32,4 +33,4 @@ const ProjetosNovos = () => {
   );
 }
 
-export default ProjetosNovos;
+export default ProjetosConcluidos;

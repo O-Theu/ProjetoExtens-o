@@ -15,7 +15,7 @@ export const ListaSuspensa = ({aberta}) => {
                         <Link to={"/projetosandamento"} className="lista-menu__link">Andamento</Link>
                     </li>
                     <li className="lista-menu__item">
-                        <Link to={"/home"} className="lista-menu__link">Concluídos</Link>
+                        <Link to={"/projetosconcluido"} className="lista-menu__link">Concluídos</Link>
                     </li>
                 </ul>
             )}

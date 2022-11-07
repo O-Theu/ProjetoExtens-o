@@ -8,9 +8,7 @@ const Cadastro = () => {
   return (
       <div>
         <NavBar />
-        <ProjetosProvider >
-          <FormularioCadastro />
-        </ProjetosProvider>
+        <FormularioCadastro />
       </div>
   );
 }

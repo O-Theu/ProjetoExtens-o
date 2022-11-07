@@ -4,17 +4,13 @@ import { motion } from 'framer-motion'
 import './style.css'
 import { Card } from "../Card";
 
-export const Carrossel = () => {
+export const Carrossel = ({ projetos }) => {
     const carrosel = useRef();
     const [width, setWidth] = useState(0);
 
     useEffect(() => {
         setWidth(carrosel.current?.scrollWidth - carrosel.current?.offsetWidth)
     });
-
-    var projetos = [];
-
-    projetos = JSON.parse(localStorage.getItem("projetos"))
 
     return (
         <div className="container__carrosel">
