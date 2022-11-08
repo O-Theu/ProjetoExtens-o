@@ -6,19 +6,23 @@ import { ProjetosContext, ProjetosProvider } from '../context/ProjetosContext';
 
 const ProjetosConcluidos = () => {
 
-  const { dataFormatada } = useContext(ProjetosContext);
+  const { dataFormatada, busca } = useContext(ProjetosContext);
 
   var projetos = [];
 
-  var projetosFiltrado = []; 
+  var projetosFinalizados = []; 
 
   projetos = JSON.parse(localStorage.getItem("projetos"))
 
   projetos.map((projeto) => {
     if(projeto.dataFinal < dataFormatada ) {
-      projetosFiltrado.push(projeto);
+      projetosFinalizados.push(projeto);
     }
   })
+
+  const buscaLowerCase = busca.toLowerCase()
+
+  const projetosFiltrado = projetosFinalizados.filter(({nomeProjeto, descricao, dataInicial, dataFinal}) => nomeProjeto.toLowerCase().includes(buscaLowerCase) || descricao.toLowerCase().includes(buscaLowerCase) || dataInicial.toLowerCase().includes(buscaLowerCase) || dataFinal.toLowerCase().includes(buscaLowerCase))
  
 
   return (

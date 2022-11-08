@@ -1,18 +1,24 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { ListaSuspensa } from "../ListaSuspensa";
-import { FiSearch } from 'react-icons/fi'
 
 import './style.css';
+import { ProjetosContext } from "../../context/ProjetosContext";
 
 export const NavBar = () => {
     const [open, setOpen] = useState(false)
 
+    const { setBusca } = useContext(ProjetosContext)
+
     return(
         <nav className="barra-de-navegacao">
             <div className="barra__pesquisa">
-                <input className="pesquisa" type="search" placeholder="Buscar..."/>
-                <button className="pesquisa__submit"><FiSearch fontSize={18} color="#FFF"/></button>
+                <input 
+                    className="pesquisa" 
+                    type="search" 
+                    placeholder="Buscar..."
+                    onChange={(e) => setBusca(e.target.value)}
+                />
             </div>
             <div>
                 <ul className="opcoes">  

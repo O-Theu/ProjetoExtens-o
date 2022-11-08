@@ -13,8 +13,6 @@ export const ProjetosProvider = ({ children }) => {
     if(!localStorage.hasOwnProperty("projetos")) {
         localStorage.setItem("projetos", JSON.stringify(projetos))
     }
-
-    
     
     const cadastarProjeto = (e) => {
         e.preventDefault();
@@ -30,9 +28,12 @@ export const ProjetosProvider = ({ children }) => {
     const data = new Date();
     var dataFormatada = ((data.getFullYear() )) + "-" + ((data.getMonth() + 1)) + "-" +  "0" +((data.getDate() ));
 
+    // Busca
+    const [ busca, setBusca ] = useState('');
+
     return (
         <ProjetosContext.Provider 
-            value={{ setNomeProjeto, setDescricao, setDataFinal, setDataInicial, submit: cadastarProjeto, projetos, dataFormatada}}>
+            value={{ setNomeProjeto, setDescricao, setDataFinal, setDataInicial, submit: cadastarProjeto, projetos, dataFormatada, setBusca, busca}}>
             { children }
         </ProjetosContext.Provider>
     )
